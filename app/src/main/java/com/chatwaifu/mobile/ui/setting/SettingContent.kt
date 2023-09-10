@@ -184,6 +184,16 @@ fun SettingContent(
         ) {
             settingUIState.amaduesSetting = it
         }
+
+        DividerItem(modifier = Modifier.padding(top = 20.dp, bottom = 10.dp))
+        ItemTitle(stringResource(id = R.string.setting_title_lika_setting))
+        SettingEditText(
+            initValue = settingUIState.likaSetting,
+            hint = stringResource(id = R.string.setting_amadeus_hint)
+        ) {
+            settingUIState.likaSetting = it
+        }
+
         DividerItem(modifier = Modifier.padding(top = 20.dp, bottom = 10.dp))
         ItemTitle(stringResource(id = R.string.setting_title_external_model_setting))
         SettingEditText(
@@ -430,6 +440,7 @@ class SettingUIState(data: SettingUIData) {
     var yuukaSetting by mutableStateOf(data.yuukaSetting)
     var amaduesSetting by mutableStateOf(data.amaduesSetting)
     var atriSetting by mutableStateOf(data.atriSetting)
+    var likaSetting by mutableStateOf(data.likaSetting)
     var externalSetting by mutableStateOf(data.externalSetting)
     var darkModeSwitch by mutableStateOf(data.darkModeSwitch)
     var externalModelSpeakerId by mutableStateOf(data.externalModelSpeakerId)
@@ -445,6 +456,7 @@ class SettingUIState(data: SettingUIData) {
             yuukaSetting = yuukaSetting,
             amaduesSetting = amaduesSetting,
             atriSetting = atriSetting,
+            likaSetting = likaSetting,
             externalSetting = externalSetting,
             darkModeSwitch = darkModeSwitch,
             externalModelSpeakerId = externalModelSpeakerId,
@@ -466,6 +478,7 @@ data class SettingUIData(
     var yuukaSetting: String = "",
     var amaduesSetting: String = "",
     var atriSetting: String = "",
+    var likaSetting: String = "",
     var externalSetting: String = "",
     var darkModeSwitch: Boolean = false,
     var externalModelSpeakerId: Int = 0,
@@ -481,6 +494,7 @@ val exampleSettingUi = SettingUIData(
     yuukaSetting = "example yuuka setting",
     amaduesSetting = "example amadeus setting",
     atriSetting = "example atri setting...",
+    likaSetting = "example lika setting...",
     externalSetting = "example external setting....",
     darkModeSwitch = false,
     externalModelSpeakerId = 123456

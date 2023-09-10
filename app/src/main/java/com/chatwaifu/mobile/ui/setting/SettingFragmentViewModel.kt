@@ -38,6 +38,8 @@ class SettingFragmentViewModel: ViewModel() {
         data.atriSetting = sp.getString(Constant.SAVED_ATRI_SETTING, null)
             ?: context.resources.getString(R.string.default_system_atri)
 
+        data.likaSetting = sp.getString(Constant.SAVE_LIKA_SETTING, null)
+            ?: context.resources.getString(R.string.default_system_lika)
 
         sp.getString(Constant.SAVED_EXTERNAL_SETTING, null)?.let {
             data.externalSetting = it
@@ -78,6 +80,10 @@ class SettingFragmentViewModel: ViewModel() {
 
             if (saved.atriSetting.isNotBlank()) {
                 putString(Constant.SAVED_ATRI_SETTING, saved.atriSetting)
+            }
+
+            if (saved.likaSetting.isNotBlank()) {
+                putString(Constant.SAVED_ATRI_SETTING, saved.likaSetting)
             }
 
             if (saved.externalSetting.isNotBlank()) {

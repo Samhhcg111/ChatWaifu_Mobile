@@ -61,6 +61,10 @@ class ChatLogViewModel : ViewModel() {
                                 Constant.LOCAL_MODEL_AMADEUS -> {
                                     R.drawable.kurisu_head
                                 }
+
+                                Constant.LOCAL_MODEL_LIKA -> {
+                                    R.drawable.kurisu_head
+                                }
                                 else -> {
                                     R.drawable.external_default_icon
                                 }

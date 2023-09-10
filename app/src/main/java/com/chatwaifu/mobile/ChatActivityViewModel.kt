@@ -110,13 +110,14 @@ class ChatActivityViewModel : ViewModel() {
                 val input = fetchInput()
                 assistantMsgManager.insertUserMessage(input)
 
-                chatStatusLiveData.postValue(ChatStatus.SEND_REQUEST)
-                val response = sendChatGPTRequest(input, assistantMsgManager.getSendAssistantList())
-                assistantMsgManager.insertGPTMessage(response)
-                Log.d(TAG, "get response $response")
-                _chatContentUIFlow.emit(constructUIStateFromResponse(response))
-
-                val responseText = response?.choices?.firstOrNull()?.message?.content
+//                chatStatusLiveData.postValue(ChatStatus.SEND_REQUEST)
+//                val response = sendChatGPTRequest(input, assistantMsgManager.getSendAssistantList())
+//                assistantMsgManager.insertGPTMessage(response)
+//                Log.d(TAG, "get response $response")
+//                _chatContentUIFlow.emit(constructUIStateFromResponse(response))
+//
+//                val responseText = response?.choices?.firstOrNull()?.message?.content
+                val responseText = input //test
                 val translateText = fetchTranslateIfNeed(responseText)
                 Log.d(TAG, "translate result: $translateText")
                 chatStatusLiveData.postValue(ChatStatus.GENERATE_SOUND)

@@ -10,6 +10,7 @@ import com.chatwaifu.mobile.data.Constant.LIVE2D_BASE_PATH
 import com.chatwaifu.mobile.data.Constant.LOCAL_MODEL_ATRI
 import com.chatwaifu.mobile.data.Constant.LOCAL_MODEL_YUUKA
 import com.chatwaifu.mobile.data.Constant.LOCAL_MODEL_AMADEUS
+import com.chatwaifu.mobile.data.Constant.LOCAL_MODEL_LIKA
 import com.chatwaifu.mobile.data.Constant.VITS_BASE_PATH
 import com.chatwaifu.mobile.safeResume
 import com.chatwaifu.mobile.ui.channellist.ChannelListBean
@@ -89,6 +90,7 @@ class LocalModelManager() {
             name == LOCAL_MODEL_YUUKA -> R.drawable.yuuka_head
             name == LOCAL_MODEL_AMADEUS -> R.drawable.kurisu_head
             name == LOCAL_MODEL_ATRI -> R.drawable.atri_head
+            name == LOCAL_MODEL_LIKA -> R.drawable.kurisu_head
             else -> R.drawable.external_default_icon
         }
     }
@@ -129,6 +131,11 @@ class LocalModelManager() {
                 sp.getString(Constant.SAVED_ATRI_SETTING, null)?.let {
                     it.ifBlank { null }
                 } ?: ChatWaifuApplication.context.resources.getString(R.string.default_system_atri)
+            }
+            LOCAL_MODEL_LIKA -> {
+                sp.getString(Constant.SAVE_LIKA_SETTING, null)?.let {
+                    it.ifBlank { null }
+                } ?: ChatWaifuApplication.context.resources.getString(R.string.default_system_lika)
             }
             else -> {
                 sp.getString(Constant.SAVED_EXTERNAL_SETTING, null)?.let {
@@ -172,6 +179,9 @@ class LocalModelManager() {
                 list = listOf(0f, 0f, 2f)
             }
 
+            Constant.LOCAL_MODEL_LIKA -> {
+                list = listOf(0f, -0.6f, 3f)
+            }
             else -> {
                 list = listOf(0f, 0f, 1f)
             }
@@ -193,7 +203,8 @@ class LocalModelManager() {
         return when (currentLive2DModelName) {
             Constant.LOCAL_MODEL_YUUKA,
             Constant.LOCAL_MODEL_AMADEUS,
-            Constant.LOCAL_MODEL_ATRI -> 0
+            Constant.LOCAL_MODEL_ATRI,
+            Constant.LOCAL_MODEL_LIKA -> 0
             else -> {
                 sp.getInt(Constant.SAVED_EXTERNAL_MODEL_SPEAKER_ID, 0)
             }

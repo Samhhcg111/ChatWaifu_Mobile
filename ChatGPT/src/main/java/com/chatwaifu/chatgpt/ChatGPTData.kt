@@ -10,7 +10,7 @@ import org.json.JSONObject
 
 object ChatGPTData {
     const val MAX_TOKEN_LIMIT = 4096 //turbo 3.5 max context length
-    const val MAX_GENERATE_LIMIT = 1000 // chat gpt response limit
+    const val MAX_GENERATE_LIMIT = 400 // chat gpt response limit
     const val MAX_SEND_LIMIT = MAX_TOKEN_LIMIT - MAX_GENERATE_LIMIT //send message length limit
     const val DEFAULT_SYSTEM_ROLE_LIMIT = 100 //default system role token length
 }

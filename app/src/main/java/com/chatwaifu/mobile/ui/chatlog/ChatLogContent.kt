@@ -176,6 +176,7 @@ fun ChatLogAppBar(
     val yuukaName = Constant.LOCAL_MODEL_YUUKA
     val atriName = Constant.LOCAL_MODEL_ATRI
     val kurisuName = Constant.LOCAL_MODEL_AMADEUS
+    val likaNmae = Constant.LOCAL_MODEL_LIKA
 
     ChannelNameBar(
         channelName = chatName,
@@ -237,6 +238,22 @@ fun ChatLogAppBar(
                     onClick = {
                         menuExpanded = false
                         onChatCharacterClick(kurisuName)
+                    })
+
+                DropdownMenuItem(
+                    text = { Text(text = likaNmae) },
+                    leadingIcon = {
+                        Image(
+                            modifier = Modifier
+                                .clip(CircleShape)
+                                .size(30.dp),
+                            painter = painterResource(id = R.drawable.kurisu_head),
+                            contentDescription = null
+                        )
+                    },
+                    onClick = {
+                        menuExpanded = false
+                        onChatCharacterClick(likaNmae)
                     })
 
                 externalModelList.forEach {name ->

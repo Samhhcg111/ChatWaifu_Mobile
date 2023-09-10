@@ -29,7 +29,7 @@ class ChatGPTNetService(val context: Context) {
         private const val CHATGPT_BASE_URL = "https://api.openai.com/"
         val CHATGPT_DEAFULT_PROXY_URL = "https://api.openai-proxy.com/"
         private const val TIME_OUT_SECOND = 100L
-        private const val MAX_LIST_SIZE = 100
+        private const val MAX_LIST_SIZE = 6
     }
 
     private val interceptor = ChatGPTInterceptor()

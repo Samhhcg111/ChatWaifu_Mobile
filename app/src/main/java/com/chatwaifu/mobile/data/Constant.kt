@@ -16,6 +16,7 @@ object Constant {
     const val SAVED_YUUKA_SETTING = "saved_yuuka_setting"
     const val SAVED_AMADEUS_SETTING = "saved_amadeus_setting"
     const val SAVED_ATRI_SETTING = "saved_atri_setting"
+    const val SAVE_LIKA_SETTING = "saved_lika_setting"
     const val SAVED_EXTERNAL_SETTING = "saved_external_setting"
     const val SAVED_USE_TRANSLATE = "saved_use_translate"
     const val SAVED_USE_DARKMODE = "saved_use_darkmode"
@@ -29,6 +30,7 @@ object Constant {
     const val LOCAL_MODEL_YUUKA = "Yuuka"
     const val LOCAL_MODEL_AMADEUS = "Amadeus"
     const val LOCAL_MODEL_ATRI = "ATRI"
+    const val LOCAL_MODEL_LIKA = "Lika"
 
     const val LOCAL_MODEL_TRANSLATE_X_PREFIX = "local_model_translate_x_"
     const val LOCAL_MODEL_TRANSLATE_Y_PREFIX = "local_model_translate_y_"
