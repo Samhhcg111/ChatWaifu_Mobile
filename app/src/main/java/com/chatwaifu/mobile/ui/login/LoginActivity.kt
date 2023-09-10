@@ -5,6 +5,7 @@ import android.content.Intent
 import android.content.SharedPreferences
 import android.content.pm.PackageManager
 import android.os.Bundle
+import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import com.chatwaifu.mobile.BuildConfig
 import com.chatwaifu.mobile.ChatActivity
@@ -12,6 +13,7 @@ import com.chatwaifu.mobile.databinding.ActivityLoginBinding
 import com.chatwaifu.mobile.data.Constant
 import com.chatwaifu.mobile.ui.showToast
 import com.chatwaifu.vits.utils.permission.PermissionUtils
+import com.chatwaifu.mobile.R
 
 /**
  * 不要问为甚么登陆页面不用 compose 画，问就是懒
@@ -34,8 +36,9 @@ class LoginActivity : AppCompatActivity() {
         }
 
         if (sp.getString(Constant.SAVED_CHAT_KEY, null) != null) {
-            jumpToChat()
-            return
+//            jumpToChat()
+//            return
+             findViewById<EditText>(R.id.chat_gpt_text).setText(sp.getString(Constant.SAVED_CHAT_KEY, null))
         }
 
         binding.done.setOnClickListener {
@@ -48,12 +51,12 @@ class LoginActivity : AppCompatActivity() {
                 PermissionUtils.requestStoragePermission(this)
                 return@setOnClickListener
             }
-            val translateKey = binding.translateKey?.text.toString().trim()
-            val translateAppId = binding.translateAppId.text.toString().trim()
+//            val translateKey = binding.translateKey?.text.toString().trim()
+//            val translateAppId = binding.translateAppId.text.toString().trim()
             sp.edit().apply {
                 putString(Constant.SAVED_CHAT_KEY, chatKey)
-                putString(Constant.SAVED_TRANSLATE_APP_ID, translateAppId)
-                putString(Constant.SAVED_TRANSLATE_KEY, translateKey)
+//                putString(Constant.SAVED_TRANSLATE_APP_ID, translateAppId)
+//                putString(Constant.SAVED_TRANSLATE_KEY, translateKey)
                 apply()
             }
             jumpToChat()

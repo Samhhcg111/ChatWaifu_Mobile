@@ -136,6 +136,14 @@ fun ChatWaifuDrawerContent(
             selectItem = NavigationItemType.TYPE_SETTING
             onItemClicked(NavigationItemType.TYPE_SETTING)
         }
+        DrawerItem(
+            stringResource(id = R.string.drawer_item_bc_login),
+            selectItem  == NavigationItemType.TYPE_BACK_LOGIN,
+            R.drawable.ic_drawer_character_log
+        ) {
+            selectItem = NavigationItemType.TYPE_BACK_LOGIN
+            onItemClicked(NavigationItemType.TYPE_BACK_LOGIN)
+        }
     }
 }
 

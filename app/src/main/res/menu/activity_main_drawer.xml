@@ -16,6 +16,12 @@
             android:id="@+id/drawer_setting"
             android:icon="@drawable/ic_drawer_character_setting"
             android:title="Setting" />
+        <item
+            android:id="@+id/drawer_bc_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:icon="@drawable/ic_drawer_character_log"
+            android:title="Back to Login" />
 
     </group>
 </menu>

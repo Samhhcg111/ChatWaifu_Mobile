@@ -33,6 +33,9 @@ class ChatActivity : AppCompatActivity() {
                             },
                             onSettingClick = {
                                 findNavController().navigate(R.id.nav_setting)
+                            },
+                            onBackLoginClick = {
+                                findNavController().navigate(R.id.loginActivity)
                             }
                         )
                     }

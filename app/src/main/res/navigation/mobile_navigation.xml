@@ -24,4 +24,9 @@
         android:id="@+id/nav_chat_log"
         android:name="com.chatwaifu.mobile.ui.chatlog.ChatLogFragment"
         tools:layout="@layout/fragment_chat_log" />
+    <activity
+        android:id="@+id/loginActivity"
+        android:name="com.chatwaifu.mobile.ui.login.LoginActivity"
+        android:label="activity_login"
+        tools:layout="@layout/activity_login" />
 </navigation>
